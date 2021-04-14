@@ -1,0 +1,21 @@
+{% extends 'base_lg_au.html' %}
+
+{% block title %}Logged out{% endblock %}
+
+{% block content %}
+
+    <form class="login100-form validate-form">
+        <span class="login100-form-title p-b-49">
+            Logged out
+        </span>
+
+        <div class="flex-col-c p-t-155">
+            <span class="txt1 p-b-17">
+                You have been successfully logged out.
+            </span>
+    
+            <a href='{% url "login" %}' class="txt2">Log-in again</a>
+        </div>
+    </form>
+
+{% endblock %}
