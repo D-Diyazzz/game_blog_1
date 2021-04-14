@@ -5,10 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{% block title %}{% endblock %}</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'blog/css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'blog/css/magnific-popup.css' %}"/>
+	<link rel="stylesheet" href="{% static 'blog/css/owl.carousel.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'blog/css/animate.css' %}"/>
+	<link rel="stylesheet" href="{% static 'blog/css/slicknav.min.css' %}"/>
+
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="{% static 'blog/css/style.css' %}"/>
+
 </head>
 <body>
+
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+    
+	{% include 'include/header.html' %}
+
     {% block content %}
     {% endblock %}
+
+	{% include 'include/footer.html' %}
+
+    <script src="{% static 'blog/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'blog/js/jquery.slicknav.js' %}"></script>
+	<script src="{% static 'blog/js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'blog/js/circle-progress.min.js' %}"></script>
+	<script src="{% static 'blog/js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'blog/js/main.js' %}"></script>
 </body>
 </html>

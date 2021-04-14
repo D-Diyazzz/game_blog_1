@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django'
 ]
 
 MIDDLEWARE = [
@@ -100,6 +101,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+ 'django.contrib.auth.backends.ModelBackend',
+ 'social_core.backends.facebook.FacebookOAuth2',
+ 'social_core.backends.twitter.TwitterOAuth',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -120,4 +126,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = 'news'
+LOGIN_URL = 'login'
 
+
+SOCIAL_AUTH_FACEBOOK_API_VERSION = '2.1'
+SOCIAL_AUTH_FACEBOOK_KEY = '270089664782992'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'c51698f2f1c5a2aa1d5f8f0cfb4ee66e'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email'] 
